@@ -1,7 +1,13 @@
 body{
-    width: 1000px;
-    height: 1000px;
-    background-color: aqua;
+    width: 100vw;
+    height: 100vh;
+    background-color: aqua!important;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
 }
 #reloj{
     position: relative;
@@ -10,6 +16,7 @@ body{
     justify-content: center;
     width: 50vh;
     height: 50vh;
+    margin: 30px;
     border-radius: 50%;
     border: 20px solid;
     border-color: rgb(19, 18, 18);

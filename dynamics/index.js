@@ -40,8 +40,10 @@ boton.addEventListener("click", () =>{
     // console.log(minutos.value); 
 })
 
-iniciar.addEventListener("click", () =>{
-    let intervalo = setInterval(()=>{
+var intervalo;
+
+iniciar.addEventListener("click", (e) =>{
+     intervalo = setInterval(()=>{
         if(segundos.value > 0 && segundos.value != "00")
             segundos.value--;
         else{
@@ -60,6 +62,7 @@ iniciar.addEventListener("click", () =>{
             if(horas.value > 0){
                 minutos.value = 59;
                 horas.value--;
+                segundos.value = 59;
             }
             else{
                 horas.value = 0;
@@ -78,8 +81,8 @@ iniciar.addEventListener("click", () =>{
     }, 1000)
 })
 
-detener.addEventListener("click", (iniciar)=>{
-    iniciar.preventDefault();
+detener.addEventListener("click", ()=>{
+    clearInterval(intervalo);
 })
 
 

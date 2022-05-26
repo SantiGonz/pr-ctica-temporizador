@@ -27,11 +27,13 @@ body{
 #exampleModal{
     display: none;
 }
-#botones{
+.botones{
     display: flex;
     /* align-self: center; */
     justify-self: center;
+    margin: 15px;
 }
+
 /* #tiempo{
     align-self: center;
     justify-self: center;

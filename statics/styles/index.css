@@ -1,0 +1,31 @@
+body{
+    width: 1000px;
+    height: 1000px;
+    background-color: aqua;
+}
+#reloj{
+    position: relative;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 50vh;
+    height: 50vh;
+    border-radius: 50%;
+    border: 20px solid;
+    border-color: rgb(19, 18, 18);
+    color: aliceblue;
+    background-color: rgb(20, 95, 161);
+    order: -1;
+}
+#exampleModal{
+    display: none;
+}
+#botones{
+    display: flex;
+    /* align-self: center; */
+    justify-self: center;
+}
+/* #tiempo{
+    align-self: center;
+    justify-self: center;
+} */

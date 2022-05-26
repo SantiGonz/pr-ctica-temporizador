@@ -8,9 +8,9 @@ const iniciar = document.getElementById("Iniciar");
 const detener = document.getElementById("Detener");
 const alarma = new Audio("./statics/audio/picadura-de-la-cobra-g-.mp3")
 
-console.log(segundos.value);
-console.log(horas.value);
-console.log(minutos.value); 
+// console.log(segundos.value);
+// console.log(horas.value);
+// console.log(minutos.value); 
 
 
 
@@ -35,9 +35,9 @@ boton.addEventListener("click", () =>{
     }
     tiempo.innerHTML += segundos.value;
     
-    console.log(segundos.value);
-    console.log(horas.value);
-    console.log(minutos.value); 
+    // console.log(segundos.value);
+    // console.log(horas.value);
+    // console.log(minutos.value); 
 })
 
 iniciar.addEventListener("click", () =>{
@@ -48,7 +48,7 @@ iniciar.addEventListener("click", () =>{
             if(minutos.value > 0){
                 segundos.value = 59;
                 minutos.value--;
-                console.log(segundos.value);
+                // console.log(segundos.value);
             }
             else{
                 alarma.play();
@@ -65,7 +65,7 @@ iniciar.addEventListener("click", () =>{
                 horas.value = 0;
             }
         }
-        console.log(segundos.value);
+        // console.log(segundos.value);
         tiempo.innerHTML = horas.value +":";
         if(minutos.value < 10 && minutos.value != "00" && minutos.value != ""){
             tiempo.innerHTML += "0";
@@ -78,8 +78,8 @@ iniciar.addEventListener("click", () =>{
     }, 1000)
 })
 
-detener.addEventListener("click", ()=>{
-    preventDefault(iniciar);
+detener.addEventListener("click", (iniciar)=>{
+    iniciar.preventDefault();
 })
 
 

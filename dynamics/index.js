@@ -6,6 +6,7 @@ const segundos = document.getElementById("segundos");
 const boton = document.getElementById("boton");
 const iniciar = document.getElementById("Iniciar");
 const detener = document.getElementById("Detener");
+const alarma = new Audio("./statics/audio/picadura-de-la-cobra-g-.mp3")
 
 console.log(segundos.value);
 console.log(horas.value);
@@ -25,9 +26,9 @@ boton.addEventListener("click", () =>{
     }
     
     tiempo.innerHTML = horas.value +":";
-    // if(minutos.value < 10 != "00"){
-    //     tiempo.innerHTML += "0";
-    // }
+    if(minutos.value < 10 && minutos.value != "00" && minutos.value != ""){
+        tiempo.innerHTML += "0";
+    }
     tiempo.innerHTML += minutos.value +":";
     if(segundos.value < 10 && segundos.value != "00" && segundos.value != ""){
         tiempo.innerHTML += "0";
@@ -49,9 +50,9 @@ iniciar.addEventListener("click", () =>{
                 minutos.value--;
                 console.log(segundos.value);
             }
-            // else{
-            //     // alarma
-            // }
+            else{
+                alarma.play();
+            }
         }
         // if(minutos.value > 0)
         //     minutos.value--;
@@ -66,15 +67,19 @@ iniciar.addEventListener("click", () =>{
         }
         console.log(segundos.value);
         tiempo.innerHTML = horas.value +":";
-        // if(minutos.value < 10 != "00"){
-        //     tiempo.innerHTML += "0";
-        // }
+        if(minutos.value < 10 && minutos.value != "00" && minutos.value != ""){
+            tiempo.innerHTML += "0";
+        }
         tiempo.innerHTML += minutos.value +":";
         if(segundos.value < 10 != "00"){
             tiempo.innerHTML += "0";
         }
         tiempo.innerHTML += segundos.value;
     }, 1000)
+})
+
+detener.addEventListener("click", ()=>{
+    preventDefault(iniciar);
 })
 
 
